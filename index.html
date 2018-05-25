@@ -12,9 +12,15 @@
   <script type="text/babel">
     class RandomBox extends React.Component {
       render() {
-        <div>
-          Make a box here!
-        </div>
+        const x = Math.floor(((Math.random()*4)+1));
+        var boxColors = ["white", "blue", "green", "yellow", "orange"];
+        var boxColor = boxColors[x];
+        const textStyle = {fontSize: x + 'em'};
+        const boxStyle = {backgroundColor: boxColor, display: 'inline-block', padding: '5px 15px'};
+        return(
+          <div style={boxStyle}>
+          <p style={textStyle}>Make a box here!</p>
+          </div>
         );
       }
     }
